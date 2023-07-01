@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:music_player/screens/homepage/components/playList.dart';
-import 'package:music_player/screens/homepage/components/recommended_list.dart';
 import 'package:music_player/utils/exports.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,7 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: DrawerMenu(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(left: 28),
@@ -21,12 +19,12 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 11.h),
               Text('Recommended for you', style: header),
               SizedBox(height: 11.h),
-            //recommended list
+              //recommended list
               RecommendedList(),
-              SizedBox(height: 40.h),
+              SizedBox(height: 30.h),
               Text('My Playlist', style: header),
               SizedBox(height: 11.h),
-            //Playlsit
+              //Playlsit
               PlayList(),
             ],
           ),
