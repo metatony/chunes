@@ -2,7 +2,9 @@
 
 import 'package:device_preview/device_preview.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:music_player/screens/playing%20now/playingPage.dart';
 import 'package:music_player/screens/homepage/homepage.dart';
+import 'package:music_player/screens/liked%20songs/liked_songs.dart';
 import 'package:music_player/utils/exports.dart';
 
 void main() {

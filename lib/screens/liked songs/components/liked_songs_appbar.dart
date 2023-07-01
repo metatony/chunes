@@ -2,32 +2,31 @@
 
 import 'package:music_player/utils/exports.dart';
 
-class HomePageAppBar extends StatelessWidget {
-  const HomePageAppBar({
+class LikedSongsAppBar extends StatelessWidget {
+  const LikedSongsAppBar({
     super.key,
   });
-
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       //color: Colors.green,
-      padding: EdgeInsets.only(top: 28, left: 0, right: 28),
+      padding: EdgeInsets.only(top: 28, right: 28),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Builder(
-            builder: (context) => IconButton(
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              icon: ImageIcon(AssetImage('icons/Group 145.png')),
-            ),
+          IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: ImageIcon(AssetImage('icons/arrow-right.png')),
           ),
           IconButton(
               onPressed: () {},
-              icon: ImageIcon(AssetImage('icons/Vector.png'))),
+              icon: ImageIcon(
+                AssetImage('icons/adjust-horizontal-alt.png'),
+              )),
         ],
       ),
     );

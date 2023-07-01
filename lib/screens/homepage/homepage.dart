@@ -13,10 +13,9 @@ class HomePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(left: 28),
           child: ListView(
-            //crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HomePageAppBar(),
-              SizedBox(height: 11.h),
+              SizedBox(height: 30.h),
               Text('Recommended for you', style: header),
               SizedBox(height: 11.h),
               //recommended list
