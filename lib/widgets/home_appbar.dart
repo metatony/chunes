@@ -13,7 +13,7 @@ class HomePageAppBar extends StatelessWidget {
     return Container(
       width: double.infinity,
       //color: Colors.green,
-      padding: EdgeInsets.only(top: 28, left: 0, right: 28),
+      padding: EdgeInsets.only(top: 28.h, left: 0, right: 28.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -22,12 +22,12 @@ class HomePageAppBar extends StatelessWidget {
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
-              icon: ImageIcon(AssetImage('icons/Group 145.png')),
+              icon: ImageIcon(AssetImage('icons/Group 145.png'),color: Theme.of(context).colorScheme.primary ),
             ),
           ),
           IconButton(
               onPressed: () {},
-              icon: ImageIcon(AssetImage('icons/Vector.png'))),
+              icon: ImageIcon(AssetImage('icons/Vector.png'),color: Theme.of(context).colorScheme.primary)),
         ],
       ),
     );

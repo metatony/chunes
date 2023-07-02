@@ -12,7 +12,7 @@ class LikedSongsGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       shrinkWrap: true,
-      padding: EdgeInsets.only(right: 28),
+      padding: EdgeInsets.only(right: 28.w),
       itemCount: 12,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,

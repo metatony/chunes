@@ -8,20 +8,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       drawer: DrawerMenu(),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(left: 28),
+          padding:  EdgeInsets.only(left: 28.w),
           child: ListView(
             children: [
               HomePageAppBar(),
               SizedBox(height: 30.h),
-              Text('Recommended for you', style: header),
+              Text('Recommended for you', style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w700, color: Theme.of(context).colorScheme.primary)),
+              
               SizedBox(height: 11.h),
               //recommended list
               RecommendedList(),
               SizedBox(height: 30.h),
-              Text('My Playlist', style: header),
+              Text('My Playlist', style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w700, color: Theme.of(context).colorScheme.primary)),
               SizedBox(height: 11.h),
               //Playlsit
               PlayList(),

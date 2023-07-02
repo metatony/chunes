@@ -1,10 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:device_preview/device_preview.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:music_player/screens/playing%20now/playingPage.dart';
 import 'package:music_player/screens/homepage/homepage.dart';
-import 'package:music_player/screens/liked%20songs/liked_songs.dart';
+import 'package:music_player/theme/darktheme.dart';
+import 'package:music_player/theme/lighttheme.dart';
 import 'package:music_player/utils/exports.dart';
 
 void main() {
@@ -23,10 +22,10 @@ class MyApp extends StatelessWidget {
       designSize: Size(375, 812),
       builder: (BuildContext context, Widget? child) {
         return MaterialApp(
-          theme: ThemeData(fontFamily: GoogleFonts.poppins().fontFamily),
+          darkTheme: darkTheme,
+          theme: lighttheme,
           debugShowCheckedModeBanner: false,
           home: Scaffold(
-          
             body: HomePage(),
           ),
         );

@@ -18,9 +18,10 @@ class _PlayingPageState extends State<PlayingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(left: 28),
+          padding: EdgeInsets.only(left: 28.w),
           child: ListView(
             children: [
               PlayingNowAppBar(),
@@ -48,31 +49,37 @@ class _PlayingPageState extends State<PlayingPage> {
                 ),
               ),
               Container(
-                  padding: EdgeInsets.only(right: 28),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                          onPressed: () {},
-                          icon: ImageIcon(AssetImage('icons/volume-1.png'), color: Colors.grey)),
-                      IconButton(
-                          onPressed: () {},
-                          icon: ImageIcon(
-                              AssetImage('icons/ic_round-repeat.png'),  color: Colors.grey)),
-                    ],
-                  )),
-             SizedBox(height: 15.h),
-              Container(
                 padding: EdgeInsets.only(right: 28),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                        onPressed: () {},
+                        icon: ImageIcon(AssetImage('icons/volume-1.png'),
+                            color: Colors.grey)),
+                    IconButton(
+                        onPressed: () {},
+                        icon: ImageIcon(AssetImage('icons/ic_round-repeat.png'),
+                            color: Colors.grey)),
+                  ],
+                ),
+              ),
+              SizedBox(height: 15.h),
+              Container(
+                padding: EdgeInsets.only(right: 28.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text('00:45',
                         style: TextStyle(
-                            fontSize: 12.sp, fontWeight: FontWeight.w400)),
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Theme.of(context).colorScheme.primary)),
                     Text('04:00',
                         style: TextStyle(
-                            fontSize: 12.sp, fontWeight: FontWeight.w400)),
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Theme.of(context).colorScheme.primary)),
                   ],
                 ),
               ),
@@ -80,8 +87,8 @@ class _PlayingPageState extends State<PlayingPage> {
               Slider(
                 min: 0,
                 max: 100,
-                activeColor: Colors.black,
-                inactiveColor: Color.fromARGB(255, 225, 225, 225),
+                activeColor: Theme.of(context).colorScheme.primary,
+                inactiveColor: Theme.of(context).colorScheme.secondary,
                 value: value,
                 onChanged: (double newValue) {
                   setState(() {
@@ -98,15 +105,16 @@ class _PlayingPageState extends State<PlayingPage> {
                     children: [
                       IconButton(
                           onPressed: () {},
-                          icon: ImageIcon(
-                            AssetImage('icons/next.png'),
-                          )),
+                          icon: ImageIcon(AssetImage('icons/next.png'),
+                              color: Theme.of(context).colorScheme.primary)),
                       IconButton(
                           onPressed: () {},
-                          icon: ImageIcon(AssetImage('icons/pause.png'))),
+                          icon: ImageIcon(AssetImage('icons/pause.png'),
+                              color: Theme.of(context).colorScheme.primary)),
                       IconButton(
                           onPressed: () {},
-                          icon: ImageIcon(AssetImage('icons/next (1).png')))
+                          icon: ImageIcon(AssetImage('icons/next (1).png'),
+                              color: Theme.of(context).colorScheme.primary))
                     ],
                   ),
                 ),

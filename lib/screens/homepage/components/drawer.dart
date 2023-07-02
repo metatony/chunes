@@ -10,6 +10,7 @@ class DrawerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Theme.of(context).colorScheme.background,
       width: 265.w,
       child: ListView(
         padding: EdgeInsets.only(top: 73.h, left: 20.w, right: 10.w),
@@ -23,17 +24,21 @@ class DrawerMenu extends StatelessWidget {
                 },
                 icon: ImageIcon(
                   AssetImage('icons/Group 144.png'),
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                 
+                },
                 icon: ImageIcon(
                   AssetImage('icons/moon.png'),
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ],
           ),
-          SizedBox(height: 51),
+          SizedBox(height: 51.h),
           ...List.generate(
             menuItems.length,
             (index) => NavItems(

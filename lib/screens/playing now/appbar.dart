@@ -12,7 +12,7 @@ class PlayingNowAppBar extends StatelessWidget {
     return Container(
       width: double.infinity,
       //color: Colors.green,
-      padding: EdgeInsets.only(top: 28, left: 0, right: 28),
+      padding: EdgeInsets.only(top: 28.h, left: 0, right: 28.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -20,11 +20,11 @@ class PlayingNowAppBar extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: ImageIcon(AssetImage('icons/arrow-right.png')),
+            icon: ImageIcon(AssetImage('icons/arrow-right.png'), color: Theme.of(context).colorScheme.primary ),
           ),
           Text(
             'Playing Now',
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20.sp),
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20.sp, color: Theme.of(context).colorScheme.primary),
           ),
           IconButton(
             onPressed: () {},

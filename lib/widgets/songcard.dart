@@ -40,10 +40,10 @@ class SongCard extends StatelessWidget {
                 SizedBox(height: 16.h),
                 Text(
                   'Monsters Go Bump',
-                  style: title,
+                  style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500, color: Theme.of(context).colorScheme.primary),
                 ),
                 SizedBox(height: 5.39.h),
-                Text('ERIKA RECINOS', style: artist),
+                Text('ERIKA RECINOS', style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w400, color: Theme.of(context).colorScheme.secondary)),
               ],
             ),
           ),

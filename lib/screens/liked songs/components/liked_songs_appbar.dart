@@ -12,7 +12,7 @@ class LikedSongsAppBar extends StatelessWidget {
     return Container(
       width: double.infinity,
       //color: Colors.green,
-      padding: EdgeInsets.only(top: 28, right: 28),
+      padding: EdgeInsets.only(top: 28.h, right: 28.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -20,13 +20,13 @@ class LikedSongsAppBar extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: ImageIcon(AssetImage('icons/arrow-right.png')),
+            icon: ImageIcon(AssetImage('icons/arrow-right.png'), color: Theme.of(context).colorScheme.primary),
           ),
           IconButton(
               onPressed: () {},
               icon: ImageIcon(
-                AssetImage('icons/adjust-horizontal-alt.png'),
-              )),
+                AssetImage('icons/adjust-horizontal-alt.png'), color: Theme.of(context).colorScheme.primary),
+              )
         ],
       ),
     );
