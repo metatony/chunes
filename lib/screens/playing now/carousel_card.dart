@@ -5,10 +5,10 @@ import 'package:music_player/utils/exports.dart';
 
 class CarouselCard extends StatelessWidget {
   const CarouselCard({
-    super.key, required this.image,
+    super.key, required this.image, required this.title, required this.subTitle,
   });
 
-  final String image;
+  final String image, title, subTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +27,13 @@ class CarouselCard extends StatelessWidget {
                 fit: BoxFit.cover,
                 )),
           SizedBox(height: 16.h),
-          Text('Monsters Go Bump',
+          Text(title,
               style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                   color: Theme.of(context).colorScheme.primary)),
           SizedBox(height: 5.39.h),
-          Text('ERIKA RECINOS',
+          Text(subTitle,
               style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w400,

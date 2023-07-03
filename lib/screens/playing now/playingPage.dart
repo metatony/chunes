@@ -6,9 +6,9 @@ import 'package:music_player/utils/exports.dart';
 
 class PlayingPage extends StatefulWidget {
   final int selectedIndex;
-  final String image;
+  final String image, title, subTitle;
 
-  const PlayingPage({super.key, required this.selectedIndex, required this.image});
+  const PlayingPage({super.key, required this.selectedIndex, required this.image, required this.title, required this.subTitle});
 
   @override
   State<PlayingPage> createState() => _PlayingPageState();
@@ -29,7 +29,7 @@ class _PlayingPageState extends State<PlayingPage> {
               PlayingNowAppBar(),
               SizedBox(height: 50.h),
               CarouselCard(
-                image: widget.image,
+                image: widget.image, title: widget.title, subTitle: widget.subTitle,
               ),
               Container(
                 padding: EdgeInsets.only(right: 28.w),

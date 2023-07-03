@@ -38,7 +38,6 @@ dependencies:
   device_preview: ^1.1.0
   flutter_screenutil: ^5.8.4
   google_fonts: ^5.1.0
-  carousel_slider: ^4.2.1
   provider: ^6.0.5
   http:
   cached_network_image: ^3.2.3

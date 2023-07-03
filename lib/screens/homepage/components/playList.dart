@@ -24,7 +24,9 @@ class PlayList extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => PlayingPage(
                       selectedIndex: index,
-                      image: tracks[index]['image'],
+                      image: tracks[index]['image'], 
+                      subTitle: tracks[index]['subTitle'], 
+                      title: tracks[index]['title'],
                     ),
                   ),
                 );
