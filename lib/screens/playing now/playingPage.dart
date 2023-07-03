@@ -1,12 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:music_player/screens/playing%20now/appbar.dart';
 import 'package:music_player/screens/playing%20now/carousel_card.dart';
 import 'package:music_player/utils/exports.dart';
 
 class PlayingPage extends StatefulWidget {
-  PlayingPage({super.key});
+  final int selectedIndex;
+  final String image;
+
+  const PlayingPage({super.key, required this.selectedIndex, required this.image});
 
   @override
   State<PlayingPage> createState() => _PlayingPageState();
@@ -26,30 +28,11 @@ class _PlayingPageState extends State<PlayingPage> {
             children: [
               PlayingNowAppBar(),
               SizedBox(height: 50.h),
-              CarouselSlider(
-                items: [
-                  ...List.generate(
-                    menuItems.length,
-                    (index) {
-                      return CarouselCard();
-                    },
-                  ).toList(),
-                ],
-                options: CarouselOptions(
-                  height: 385.h,
-                  autoPlay: false,
-                  enlargeCenterPage: true,
-                  viewportFraction: 0.78,
-                  enableInfiniteScroll: false,
-                  onPageChanged: (index, reason) {
-                    // setState(() {
-                    //   value.selectedImage = index;
-                    //  });
-                  },
-                ),
+              CarouselCard(
+                image: widget.image,
               ),
               Container(
-                padding: EdgeInsets.only(right: 28),
+                padding: EdgeInsets.only(right: 28.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

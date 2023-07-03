@@ -11,3 +11,7 @@ export 'package:music_player/screens/homepage/components/drawer.dart';
 export 'package:music_player/screens/liked%20songs/components/liked_songs_card.dart';
 export 'package:music_player/screens/liked%20songs/components/liked_songs_appbar.dart';
 export 'package:music_player/screens/liked%20songs/components/songs_grid.dart';
+export 'package:provider/provider.dart';
+export 'package:music_player/screens/homepage/homepage.dart';
+export 'package:music_player/theme/darktheme.dart';
+export 'package:music_player/theme/lighttheme.dart';

@@ -1,6 +1,6 @@
-
 // ignore_for_file: prefer_const_constructors
 
+import 'package:music_player/screens/playing%20now/playingPage.dart';
 import 'package:music_player/utils/exports.dart';
 
 class RecommendedList extends StatelessWidget {
@@ -14,10 +14,28 @@ class RecommendedList extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: const [
-          SongCard(),
-          SongCard(),
-          SongCard(),
+        children: [
+          ...List.generate(
+            reverseTrack.length,
+            (index) => GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PlayingPage(
+                      selectedIndex: index,
+                      image: reverseTrack[index]['image'],
+                    ),
+                  ),
+                );
+              },
+              child: SongCard(
+                title: reverseTrack[index]['title'],
+                image: reverseTrack[index]['image'],
+                subTitle: reverseTrack[index]['subTitle'],
+              ),
+            ),
+          ),
         ],
       ),
     );

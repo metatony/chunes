@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:device_preview/device_preview.dart';
-import 'package:music_player/screens/homepage/homepage.dart';
-import 'package:music_player/theme/darktheme.dart';
-import 'package:music_player/theme/lighttheme.dart';
+
 import 'package:music_player/utils/exports.dart';
 
 void main() {
@@ -31,5 +29,6 @@ class MyApp extends StatelessWidget {
         );
       },
     );
+    // );
   }
 }
