@@ -29,13 +29,13 @@ class CarouselCard extends StatelessWidget {
           SizedBox(height: 16.h),
           Text(title,
               style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w500,
                   color: Theme.of(context).colorScheme.primary)),
           SizedBox(height: 5.39.h),
           Text(subTitle,
               style: TextStyle(
-                  fontSize: 11,
+                  fontSize: 11.sp,
                   fontWeight: FontWeight.w400,
                   color: Theme.of(context).colorScheme.secondary)),
         ],

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:music_player/utils/exports.dart';
+import 'package:music_player/utils/provider/trackprovider.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({
@@ -9,6 +10,7 @@ class DrawerMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<TrackProvider>(context);
     return Drawer(
       backgroundColor: Theme.of(context).colorScheme.background,
       width: 265.w,
@@ -29,12 +31,15 @@ class DrawerMenu extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {
-                 
+                  provider.setThemeToggle();
                 },
-                icon: ImageIcon(
-                  AssetImage('icons/moon.png'),
-                  color: Theme.of(context).colorScheme.primary,
-                ),
+                icon: provider.themeToggle
+                    ? Icon(
+                        Icons.wb_sunny,
+                        color: Theme.of(context).colorScheme.primary,
+                      )
+                    : Icon(Icons.nightlight_outlined),
+                color: Theme.of(context).colorScheme.primary,
               ),
             ],
           ),
