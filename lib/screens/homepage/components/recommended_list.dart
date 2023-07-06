@@ -25,8 +25,8 @@ class RecommendedList extends StatelessWidget {
                     builder: (context) => PlayingPage(
                       selectedIndex: index,
                       image: reverseTrack[index]['image'],
-                       subTitle: tracks[index]['subTitle'], 
-                      title: tracks[index]['title'],
+                      subTitle: reverseTrack[index]['subTitle'],
+                      title: reverseTrack[index]['title'],
                     ),
                   ),
                 );

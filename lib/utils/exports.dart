@@ -15,3 +15,8 @@ export 'package:provider/provider.dart';
 export 'package:music_player/screens/homepage/homepage.dart';
 export 'package:music_player/theme/darktheme.dart';
 export 'package:music_player/theme/lighttheme.dart';
+export 'package:audioplayers/audioplayers.dart';
+export 'package:music_player/screens/playing%20now/appbar.dart';
+export 'package:music_player/screens/playing%20now/audio.dart';
+export 'package:music_player/screens/playing%20now/carousel_card.dart';
+export 'package:music_player/utils/provider/audio_provider.dart';

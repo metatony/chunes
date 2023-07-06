@@ -37,10 +37,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   device_preview: ^1.1.0
   flutter_screenutil: ^5.8.4
-  google_fonts: ^5.1.0
+  google_fonts:
   provider: ^6.0.5
   http:
   cached_network_image: ^3.2.3
+  audioplayers: ^4.1.0
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +69,7 @@ flutter:
   assets:
     - icons/
     - images/
+    - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

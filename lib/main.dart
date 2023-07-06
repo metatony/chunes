@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:device_preview/device_preview.dart';
+import 'package:music_player/screens/playing%20now/playingPage.dart';
 
 import 'package:music_player/utils/exports.dart';
+import 'package:music_player/utils/provider/audio_provider.dart';
 import 'package:music_player/utils/provider/trackprovider.dart';
 
 void main() {
@@ -14,19 +16,22 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  
-
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => TrackProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => TrackProvider()),
+        ChangeNotifierProvider(create: (create) => AudioProvider()),
+      ],
       child: ScreenUtilInit(
         useInheritedMediaQuery: true,
         designSize: Size(375, 812),
         builder: (BuildContext context, Widget? child) {
           return MaterialApp(
             themeMode: ThemeMode.system,
-            theme: Provider.of<TrackProvider>(context).themeToggle ? lighttheme : darkTheme,
+            theme: Provider.of<TrackProvider>(context).themeToggle
+                ? lighttheme
+                : darkTheme,
             debugShowCheckedModeBanner: false,
             home: Scaffold(
               body: HomePage(),
@@ -35,6 +40,5 @@ class MyApp extends StatelessWidget {
         },
       ),
     );
-    // );
   }
 }
