@@ -61,7 +61,9 @@ class _PlayingPageState extends State<PlayingPage> {
               ),
             ),
             SizedBox(height: 15.h),
-            AudioFile(audioPlayer: player)
+            AudioFile(
+              audioPlayer: player
+              )
           ]),
         ),
       ),

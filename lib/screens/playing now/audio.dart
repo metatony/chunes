@@ -16,6 +16,10 @@ class AudioFile extends StatefulWidget {
 
 class _AudioFileState extends State<AudioFile> {
   double value = 30;
+  bool isPlaying = false;
+  void playing() {
+    isPlaying = !isPlaying;
+  }
 
   //! create an instance of duration and assign variables to track the slider position
   Duration duration = Duration();
@@ -44,7 +48,7 @@ class _AudioFileState extends State<AudioFile> {
 
   @override
   Widget build(BuildContext context) {
-    final audioProvider = Provider.of<AudioProvider>(context, listen: false);
+    //final audioProvider = Provider.of<AudioProvider>(context, listen: false);
     return SizedBox(
       width: double.infinity,
       child: Column(children: [
@@ -94,13 +98,22 @@ class _AudioFileState extends State<AudioFile> {
                 ),
                 SizedBox(width: 15.w),
                 IconButton(
+                  icon: isPlaying == false 
+                      ? Icon(Icons.play_arrow_outlined, color: Colors.black)
+                      : Icon(Icons.pause, color: Colors.black),
                   onPressed: () {
-                    audioProvider.playing();
-                    //widget.audioPlayer.play(AssetSource(path));
+                    if (isPlaying == false) {
+                      widget.audioPlayer.play(AssetSource(path));
+                      setState(() {
+                        isPlaying = !isPlaying;
+                      });
+                    } else if (isPlaying == true) {
+                      widget.audioPlayer.pause();
+                      setState(() {
+                        isPlaying = !isPlaying;
+                      });
+                    }
                   },
-                  icon: audioProvider.isPlaying
-                      ? Icon(Icons.pause, color: Colors.black)
-                      : Icon(Icons.play_arrow_outlined, color: Colors.black),
                 ),
                 SizedBox(width: 15.w),
                 IconButton(
