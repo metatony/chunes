@@ -5,13 +5,14 @@ import 'package:music_player/utils/exports.dart';
 class PlayingPage extends StatefulWidget {
   final int selectedIndex;
   final String image, title, subTitle;
+  final String songList;
 
   const PlayingPage(
       {super.key,
       required this.selectedIndex,
       required this.image,
       required this.title,
-      required this.subTitle});
+      required this.subTitle, required this.songList,});
 
   @override
   State<PlayingPage> createState() => _PlayingPageState();
@@ -62,7 +63,7 @@ class _PlayingPageState extends State<PlayingPage> {
             ),
             SizedBox(height: 15.h),
             AudioFile(
-              audioPlayer: player
+              audioPlayer: player, song: widget.songList,
               )
           ]),
         ),

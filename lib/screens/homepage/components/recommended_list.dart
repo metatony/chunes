@@ -26,7 +26,8 @@ class RecommendedList extends StatelessWidget {
                       selectedIndex: index,
                       image: reverseTrack[index]['image'],
                       subTitle: reverseTrack[index]['subTitle'],
-                      title: reverseTrack[index]['title'],
+                      title: reverseTrack[index]['title'], 
+                      songList: reverseTrack[index]['song'],
                     ),
                   ),
                 );

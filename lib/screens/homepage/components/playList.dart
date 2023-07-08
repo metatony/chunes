@@ -26,7 +26,8 @@ class PlayList extends StatelessWidget {
                       selectedIndex: index,
                       image: tracks[index]['image'], 
                       subTitle: tracks[index]['subTitle'], 
-                      title: tracks[index]['title'],
+                      title: tracks[index]['title'], 
+                      songList: tracks[index]['song'],
                     ),
                   ),
                 );

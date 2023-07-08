@@ -1,11 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:device_preview/device_preview.dart';
-import 'package:music_player/screens/playing%20now/playingPage.dart';
-
 import 'package:music_player/utils/exports.dart';
-import 'package:music_player/utils/provider/audio_provider.dart';
-import 'package:music_player/utils/provider/trackprovider.dart';
 
 void main() {
   runApp(DevicePreview(builder: (context) {

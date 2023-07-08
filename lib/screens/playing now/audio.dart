@@ -6,9 +6,11 @@ class AudioFile extends StatefulWidget {
   const AudioFile({
     super.key,
     required this.audioPlayer,
+    required this.song,
   });
 
   final AudioPlayer audioPlayer;
+  final String song;
 
   @override
   State<AudioFile> createState() => _AudioFileState();
@@ -27,8 +29,6 @@ class _AudioFileState extends State<AudioFile> {
   bool isLoop = false;
 
   //! create a path variable to store your audio file
-  final String path =
-      'Nasty_C_Ft_Davido_Cassper_Nyovest_-_Juice_Back_Remix_.mp3';
 
   @override
   void initState() {
@@ -98,12 +98,12 @@ class _AudioFileState extends State<AudioFile> {
                 ),
                 SizedBox(width: 15.w),
                 IconButton(
-                  icon: isPlaying == false 
-                      ? Icon(Icons.play_arrow_outlined, color: Colors.black)
-                      : Icon(Icons.pause, color: Colors.black),
+                  icon: isPlaying == false
+                      ? Icon(Icons.play_arrow_outlined, color: Theme.of(context).colorScheme.primary)
+                      : Icon(Icons.pause, color:  Theme.of(context).colorScheme.primary),
                   onPressed: () {
                     if (isPlaying == false) {
-                      widget.audioPlayer.play(AssetSource(path));
+                      widget.audioPlayer.play(AssetSource(widget.song));
                       setState(() {
                         isPlaying = !isPlaying;
                       });
