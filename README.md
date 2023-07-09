@@ -1,6 +1,6 @@
 # music_player
 
-## Features(Android & iOS)
+## Features
 
   * [x] Beautiful UI with multiple themes includes light theme and dark theme
   * [x] Play / Stop / Pause
