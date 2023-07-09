@@ -1,16 +1,23 @@
 # music_player
 
-A new Flutter project.
+## Features(Android & iOS)
 
-## Getting Started
+  * [x] Beautiful UI with multiple themes includes light theme and dark theme
+  * [x] Play / Stop / Pause
+  * [x] Seek
+  * [x] Album Art
+  * [x] onComplete
+  * [x] onDuration / onCurrentPosition
+  * [x] Fast forward / Rewind
+  * [ ] Favorite
+  * [ ] Shuffle
 
-This project is a starting point for a Flutter application.
+- #### Light theme
 
-A few resources to get you started if this is your first Flutter project:
+| <img src= "https://github.com/metatony/music-player/assets/98693285/9238be52-2a5c-46dd-babe-90d7f18b1923" style="max-width: 50%"> | <img src= "https://github.com/metatony/music-player/assets/98693285/db045ed3-b1ae-42d7-bcb0-eaf842883bf0" style="max-width: 50%"> | <img src= "https://github.com/metatony/music-player/assets/98693285/bed7274f-7e2f-438d-9ef4-5f5506cf94e4" style="max-width: 50%"> |
+| -------------------------------------------- | ---------------------------------- | ---------------------------------- |
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- #### Dark theme
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+|     <img src= "https://github.com/metatony/music-player/assets/98693285/abf4470f-545d-4521-b0df-d640c3a38940" style="max-width: 50%">        |  <img src= "https://github.com/metatony/music-player/assets/98693285/546eed77-152f-4f2f-b263-b354c3387b99" style="max-width: 50%"> |  <img src= "https://github.com/metatony/music-player/assets/98693285/30667d0a-d694-49b3-95ac-a5ca2bd09a41" style="max-width: 50%"> |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
