@@ -17,7 +17,7 @@ class AudioFile extends StatefulWidget {
 }
 
 class _AudioFileState extends State<AudioFile> {
-  double value = 30;
+  //double value = 0;
   bool isPlaying = false;
   void playing() {
     isPlaying = !isPlaying;
@@ -26,9 +26,6 @@ class _AudioFileState extends State<AudioFile> {
   //! create an instance of duration and assign variables to track the slider position
   Duration duration = Duration();
   Duration position = Duration();
-  bool isLoop = false;
-
-  //! create a path variable to store your audio file
 
   @override
   void initState() {
@@ -44,6 +41,19 @@ class _AudioFileState extends State<AudioFile> {
         position = p;
       });
     });
+
+    widget.audioPlayer.onPlayerComplete.listen((p) {
+      setState(() {
+        position = Duration(seconds: 0);
+        isPlaying = false;
+      });
+    });
+  }
+
+  //! function to control the slider position
+  void changeToSecond(int second) {
+    Duration newDuration = Duration(seconds: second);
+    widget.audioPlayer.seek(newDuration);
   }
 
   @override
@@ -58,14 +68,15 @@ class _AudioFileState extends State<AudioFile> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '',
+                //! the initial duration returns sec, min, hour * millisec. so the substring fetches the min and sec
+                position.toString().substring(2, 7),
                 style: TextStyle(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
                     color: Theme.of(context).colorScheme.primary),
               ),
               Text(
-                '',
+                duration.toString().substring(2, 7),
                 style: TextStyle(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
@@ -76,12 +87,17 @@ class _AudioFileState extends State<AudioFile> {
         ),
         SizedBox(height: 35.h),
         Slider(
-          min: 0,
-          max: 100,
-          value: value,
+          min: 0.00,
+          max: duration.inSeconds.toDouble(),
+          value: position.inSeconds.toDouble(),
           activeColor: Theme.of(context).colorScheme.primary,
           inactiveColor: Theme.of(context).colorScheme.secondary,
-          onChanged: (value) {},
+          onChanged: (newValue) {
+            setState(() {
+              changeToSecond(newValue.toInt());
+              newValue = newValue;
+            });
+          },
         ),
         SizedBox(height: 20.h),
         Center(
@@ -92,15 +108,19 @@ class _AudioFileState extends State<AudioFile> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    widget.audioPlayer.setPlaybackRate(0.5);
+                  },
                   icon: ImageIcon(AssetImage('icons/next.png'),
                       color: Theme.of(context).colorScheme.primary),
                 ),
                 SizedBox(width: 15.w),
                 IconButton(
                   icon: isPlaying == false
-                      ? Icon(Icons.play_arrow_outlined, color: Theme.of(context).colorScheme.primary)
-                      : Icon(Icons.pause, color:  Theme.of(context).colorScheme.primary),
+                      ? Icon(Icons.play_arrow_outlined,
+                          color: Theme.of(context).colorScheme.primary)
+                      : Icon(Icons.pause,
+                          color: Theme.of(context).colorScheme.primary),
                   onPressed: () {
                     if (isPlaying == false) {
                       widget.audioPlayer.play(AssetSource(widget.song));
@@ -117,7 +137,9 @@ class _AudioFileState extends State<AudioFile> {
                 ),
                 SizedBox(width: 15.w),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    widget.audioPlayer.setPlaybackRate(1.5);
+                  },
                   icon: ImageIcon(AssetImage('icons/next (1).png'),
                       color: Theme.of(context).colorScheme.primary),
                 ),

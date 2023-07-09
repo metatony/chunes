@@ -4,8 +4,10 @@ import 'package:music_player/utils/exports.dart';
 
 class PlayingNowAppBar extends StatelessWidget {
   const PlayingNowAppBar({
-    super.key,
+    super.key, required this.press,
   });
+
+  final Function()? press;
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +19,16 @@ class PlayingNowAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: ImageIcon(AssetImage('icons/arrow-right.png'), color: Theme.of(context).colorScheme.primary ),
+            onPressed: press,
+            icon: ImageIcon(AssetImage('icons/arrow-right.png'),
+                color: Theme.of(context).colorScheme.primary),
           ),
           Text(
             'Playing Now',
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20.sp, color: Theme.of(context).colorScheme.primary),
+            style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 20.sp,
+                color: Theme.of(context).colorScheme.primary),
           ),
           IconButton(
             onPressed: () {},
