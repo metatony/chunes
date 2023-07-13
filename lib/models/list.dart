@@ -7,7 +7,7 @@ List<Map<String, dynamic>> menuItems = [
   {'title': 'Settings', 'icon': 'icons/cog.png'},
 ];
 
-List<Map<String, dynamic>>  tracks = [
+List<Map<String, dynamic>> tracks = [
   {
     'image':
         'https://e-cdn-images.dzcdn.net/images/cover/f447bf9aa81c3937299a68dc577978aa/264x264-000000-80-0-0.jpg',
@@ -35,6 +35,7 @@ List<Map<String, dynamic>>  tracks = [
     'title': 'Miss The Rage',
     'subTitle': 'Trippie Redd, Playboi Carti',
     'song': 'Trippie_Redd_Ft_Playboi_Carti_-_Miss_The_Rage.mp3',
+    'liked': false,
   },
   {
     'image':
@@ -42,6 +43,7 @@ List<Map<String, dynamic>>  tracks = [
     'title': 'Fair Trade',
     'subTitle': 'Drake',
     'song': 'Drake-Ft-Travis-Scott-Fair-Trade-(TrendyBeatz.com).mp3',
+    'liked': false,
   },
   {
     'image':
@@ -49,22 +51,26 @@ List<Map<String, dynamic>>  tracks = [
     'title': 'Praise God',
     'subTitle': 'Kanye West',
     'song': 'Kanye_West_-_Praise_God_CeeNaija.com_.mp3',
+    'liked': false,
   },
   {
     'image':
         'https://e-cdn-images.dzcdn.net/images/cover/bec6e38cb8986f3e5b3b7bd70e154d4f/264x264-000000-80-0-0.jpg',
     'title': 'Annihilate',
     'subTitle': 'Metro Boomin',
-    'song': 'Metro_Boomin_Ft_Swae_Lee_Lil_Wayne_Offset_-_Annihilate-CONNECTLOADED.COM.mp3',
+    'song':
+        'Metro_Boomin_Ft_Swae_Lee_Lil_Wayne_Offset_-_Annihilate-CONNECTLOADED.COM.mp3',
+    'liked': false,
   },
   {
     'image':
         'https://e-cdn-images.dzcdn.net/images/cover/862ab860ff69c30deeb5979db6e46b62/264x264-000000-80-0-0.jpg',
     'title': 'Too Many Nights',
     'subTitle': 'Metro Boomin',
-    'song': 'Metro_Boomin_Future_Visualizer_ft_Don_Toliver_-_Too_Many_Nights_Nobadsong.com.mp3',
+    'song':
+        'Metro_Boomin_Future_Visualizer_ft_Don_Toliver_-_Too_Many_Nights_Nobadsong.com.mp3',
+    'liked': false,
   },
 ];
 
-
-final List<Map<String, dynamic>> reverseTrack = tracks.reversed.toList();
+List<Map<String, dynamic>> reverseTrack = tracks.reversed.toList();

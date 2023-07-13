@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:music_player/screens/playing%20now/components/appbar.dart';
 import 'package:music_player/utils/exports.dart';
 
 class PlayingPage extends StatefulWidget {
@@ -27,6 +26,7 @@ class _PlayingPageState extends State<PlayingPage> {
   bool isRepeat = false;
   final audioPlayer = AudioPlayer();
   Color color = Colors.grey;
+ // bool liked = false;
 
   @override
   void initState() {
@@ -36,6 +36,7 @@ class _PlayingPageState extends State<PlayingPage> {
 
   @override
   Widget build(BuildContext context) {
+    final audioProvider = Provider.of<AudioProvider>(context, listen: false);
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: SafeArea(
@@ -64,6 +65,15 @@ class _PlayingPageState extends State<PlayingPage> {
                       onPressed: () {},
                       icon: ImageIcon(AssetImage('icons/volume-1.png'),
                           color: Colors.grey)),
+                  IconButton(
+                      onPressed: () {
+                        setState(() {
+                          audioProvider.addLikedSong(widget.selectedIndex);
+                        });
+                      },
+                      icon: Icon(Icons.favorite, color: audioProvider.liked == false ? Colors.grey : Colors.red )
+                      
+                          ),
                   IconButton(
                     onPressed: () {},
                     icon: ImageIcon(AssetImage('icons/ic_round-repeat.png'),
