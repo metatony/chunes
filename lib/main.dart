@@ -4,7 +4,8 @@ import 'package:device_preview/device_preview.dart';
 import 'package:music_player/utils/exports.dart';
 
 void main() {
-  runApp(DevicePreview(builder: (context) {
+  runApp(DevicePreview(
+    builder: (context) {
     return MyApp();
   }));
 }

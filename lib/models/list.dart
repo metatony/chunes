@@ -7,6 +7,8 @@ List<Map<String, dynamic>> menuItems = [
   {'title': 'Settings', 'icon': 'icons/cog.png'},
 ];
 
+
+
 List<Map<String, dynamic>> tracks = [
   {
     'image':
@@ -14,6 +16,7 @@ List<Map<String, dynamic>> tracks = [
     'title': 'Disaster',
     'subTitle': 'Dave, J Hus',
     'song': 'Dave_ft_J_Hus_-_Disaster_justcruise.com.ng.mp3',
+    'liked': false,
   },
   {
     'image':
@@ -21,6 +24,7 @@ List<Map<String, dynamic>> tracks = [
     'title': 'Helicopter',
     'subTitle': 'J Hus, icee tgm',
     'song': 'J-Hus-Helicopter-Ft-icee-tgm-(TunezJam.com).mp3',
+    'liked': false,
   },
   {
     'image':
@@ -28,6 +32,7 @@ List<Map<String, dynamic>> tracks = [
     'title': 'Vamp Anthem',
     'subTitle': 'Playboi Carti',
     'song': 'Playboi_Carti_-_Vamp_Anthem_.mp3',
+    'liked': false,
   },
   {
     'image':
@@ -72,5 +77,6 @@ List<Map<String, dynamic>> tracks = [
     'liked': false,
   },
 ];
+
 
 List<Map<String, dynamic>> reverseTrack = tracks.reversed.toList();

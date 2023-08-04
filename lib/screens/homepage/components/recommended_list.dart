@@ -27,13 +27,14 @@ class RecommendedList extends StatelessWidget {
                       image: reverseTrack[index]['image'],
                       subTitle: reverseTrack[index]['subTitle'],
                       title: reverseTrack[index]['title'], 
-                      songList: reverseTrack[index]['song'], 
+                      songList: reverseTrack[index]['song'],
+                      
                       
                     ),
                   ),
                 );
               },
-              child: SongCard(
+              child: SongCard( 
                 title: reverseTrack[index]['title'],
                 image: reverseTrack[index]['image'],
                 subTitle: reverseTrack[index]['subTitle'],
