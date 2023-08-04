@@ -6,16 +6,14 @@ class PlayingPage extends StatefulWidget {
   final int selectedIndex;
   final String image, title, subTitle;
   final String songList;
-  bool liked;
 
-  PlayingPage({
+  const PlayingPage({
     super.key,
     required this.selectedIndex,
     required this.image,
     required this.title,
     required this.subTitle,
     required this.songList,
-    this.liked = false,
   });
 
   @override
@@ -78,7 +76,7 @@ class _PlayingPageState extends State<PlayingPage> {
                       icon: Icon(Icons.favorite,
                           color: tracks[widget.selectedIndex]['liked'] == false
                               ? Colors.grey
-                              : Colors.red),
+                              : Colors.pink),
                     ),
                     IconButton(
                       onPressed: () {},
