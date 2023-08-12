@@ -9,7 +9,7 @@
   * [x] onComplete
   * [x] onDuration / onCurrentPosition
   * [x] Fast forward / Rewind
-  * [ ] Favorite
+  * [x] Favorite
   * [ ] Shuffle
 
 - #### Light theme
