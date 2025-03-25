@@ -1,13 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:device_preview/device_preview.dart';
 import 'package:music_player/utils/exports.dart';
 
 void main() {
-  runApp(DevicePreview(
-    builder: (context) {
-    return MyApp();
-  }));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {

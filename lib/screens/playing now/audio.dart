@@ -107,41 +107,47 @@ class _AudioFileState extends State<AudioFile> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(
-                  onPressed: () {
-                    widget.audioPlayer.setPlaybackRate(0.5);
-                  },
-                  icon: ImageIcon(AssetImage('icons/next.png'),
-                      color: Theme.of(context).colorScheme.primary),
+                Expanded(
+                  child: IconButton(
+                    onPressed: () {
+                      widget.audioPlayer.setPlaybackRate(0.5);
+                    },
+                    icon: ImageIcon(AssetImage('icons/next.png'),
+                        color: Theme.of(context).colorScheme.primary),
+                  ),
                 ),
-                SizedBox(width: 15.w),
-                IconButton(
-                  icon: isPlaying == false
-                      ? Icon(Icons.play_arrow_outlined,
-                          color: Theme.of(context).colorScheme.primary)
-                      : Icon(Icons.pause,
-                          color: Theme.of(context).colorScheme.primary),
-                  onPressed: () {
-                    if (isPlaying == false) {
-                      widget.audioPlayer.play(AssetSource(widget.song));
-                      setState(() {
-                        isPlaying = !isPlaying;
-                      });
-                    } else if (isPlaying == true) {
-                      widget.audioPlayer.pause();
-                      setState(() {
-                        isPlaying = !isPlaying;
-                      });
-                    }
-                  },
+                SizedBox(width: 12.w),
+                Expanded(
+                  child: IconButton(
+                    icon: isPlaying == false
+                        ? Icon(Icons.play_arrow_outlined,
+                            color: Theme.of(context).colorScheme.primary)
+                        : Icon(Icons.pause,
+                            color: Theme.of(context).colorScheme.primary),
+                    onPressed: () {
+                      if (isPlaying == false) {
+                        widget.audioPlayer.play(AssetSource(widget.song));
+                        setState(() {
+                          isPlaying = !isPlaying;
+                        });
+                      } else if (isPlaying == true) {
+                        widget.audioPlayer.pause();
+                        setState(() {
+                          isPlaying = !isPlaying;
+                        });
+                      }
+                    },
+                  ),
                 ),
-                SizedBox(width: 15.w),
-                IconButton(
-                  onPressed: () {
-                    widget.audioPlayer.setPlaybackRate(1.5);
-                  },
-                  icon: ImageIcon(AssetImage('icons/next (1).png'),
-                      color: Theme.of(context).colorScheme.primary),
+                SizedBox(width: 12.w),
+                Expanded(
+                  child: IconButton(
+                    onPressed: () {
+                      widget.audioPlayer.setPlaybackRate(1.5);
+                    },
+                    icon: ImageIcon(AssetImage('icons/next (1).png'),
+                        color: Theme.of(context).colorScheme.primary),
+                  ),
                 ),
                 SizedBox(width: 15.w),
               ],
